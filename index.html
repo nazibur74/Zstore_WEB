@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Zstore - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Toggle and Top Bar -->
+    <header class="top-bar">
+        <div class="left-section">
+            <button id="sidebar-toggle">☰</button>
+            <button class="refresh-btn" onclick="location.reload()">Zstore</button>
+        </div>
+        <div class="top-options">
+            <div class="add-menu">
+                <button class="add-btn" id="add-button">Add</button>
+                <ul class="add-dropdown hidden" id="add-dropdown">
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Product</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Sales</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Supplier</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Employee</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Customer</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add Warehouse</button></li>
+                    <li><button class="dropdown-item" onclick="window.location.href='login.html'">Add New Company</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar hidden" id="sidebar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#add-employee">Employees</a></li>
+            <li><a href="#add-product">Products</a></li>
+            <li><a href="#add-supplier-section">Suppliers</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Warehouse</a></li>
+            <li><a href="#Customer">Customers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Dashboard Overview</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images/expenses.png" alt="Total Expense" class="card-icon">
+                <h3>Total Expense</h3>
+                <p>58,420</p>
+            </div>
+            <div class="card">
+                <img src="Images/gross-profit.png" alt="Gross Profit" class="card-icon">
+                <h3>Gross Profit</h3>
+                <p>237,813</p>
+            </div>
+            <div class="card">
+                <img src="Images/failure.png" alt="Closing Stock" class="card-icon">
+                <h3>Closing Stock</h3>
+                <p>1,423</p>
+            </div>
+            <div class="card">
+                <img src="Images/rate-of-return.png" alt="Sales Return" class="card-icon">
+                <h3>Sales Return</h3>
+                <p>20</p>
+            </div>
+            <div class="card">
+                <img src="Images/return.png" alt="Products Return" class="card-icon">
+                <h3>Products Return</h3>
+                <p>15</p>
+            </div>
+            <div class="card">
+                <img src="Images/warehouse.png" alt="Warehouse" class="card-icon">
+                <h3>Warehouse</h3>
+                <p>5 Locations</p>
+            </div>
+        </div>
+
+        <!-- Profit and Loss Level Section -->
+        <h2>Profit & Loss Level</h2>
+        <div class="profit-loss">
+            <div class="profit-card">
+                <h3>Total Revenue</h3>
+                <p>300,000</p>
+            </div>
+            <div class="profit-card">
+                <h3>Total Loss</h3>
+                <p>60,000</p>
+            </div>
+            <div class="profit-card">
+                <h3>Net Profit</h3>
+                <p>240,000</p>
+            </div>
+        </div>
+
+        <!-- CEO Section -->
+        <h2>Top Contributors</h2>
+        <div class="ceo-section">
+            <div class="ceo-card">
+                <img src="Images/shafi.jpg" alt="CEO 1" class="ceo-photo">
+                <p class="ceo-name">Nazibur Rahman</p>
+                <p class="ceo-role">Founder & CEO</p>
+                <p class="ceo-desc">Nazibur has been leading our vision for over a decade, driving innovation and growth across the company.</p>
+            </div>
+            <div class="ceo-card">
+                <img src="Images/dada.jpg" alt="CEO 2" class="ceo-photo">
+                <p class="ceo-name">Partha Podder</p>
+                <p class="ceo-role">Chief Operating Officer</p>
+                <p class="ceo-desc">Partha ensures smooth operations across all departments and is a key player in strategic initiatives.</p>
+            </div>
+            <div class="ceo-card">
+                <img src="Images/jony.jpg" alt="CEO 3" class="ceo-photo">
+                <p class="ceo-name">Monayem Haque</p>
+                <p class="ceo-role">Chief Technology Officer</p>
+                <p class="ceo-desc">Monayem is the mastermind behind our tech stack and ensures we're always ahead of the curve in innovation.</p>
+            </div>
+        </div>
+        
+        <!-- Charts Section -->
+        <h2>Analytics</h2>
+        <div class="charts">
+            <canvas id="salesChart" width="50" height="50"></canvas>
+            <canvas id="stockChart" width="50" height="50"></canvas>
+            <canvas id="productSalesChart" width="50" height="50"></canvas>
+            <canvas id="topCustomersChart" width="50" height="50"></canvas>
+        </div>
+        
+        <!-- Employee -->
+        <div class="add-employee" id="add-employee">
+            <h2>Add Employee</h2>
+            <form id="add-employee-form">
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" name="employee-name" placeholder="Enter Employee Name" required>
+                <br>
+                <label for="employee-phone">Phone:</label>
+                <input type="tel" id="employee-phone" name="employee-phone" placeholder="Enter Phone Number" required>
+                <br>
+                <label for="employee-email">Email:</label>
+                <input type="email" id="employee-email" name="employee-email" placeholder="Enter Email Address" required>
+                <br>
+                <label for="employee-dob">Date of Birth:</label>
+                <input type="date" id="employee-dob" name="employee-dob" required>
+                <br>
+                <label for="employee-nid">NID Number:</label>
+                <input type="text" id="employee-nid" name="employee-nid" placeholder="Enter NID Number" required>
+                <br>
+                <label for="employee-id">Employee ID:</label>
+                <input type="text" id="employee-id" name="employee-id" placeholder="Assign Employee ID" required>
+                <br>
+                <label for="employee-type">Employee Type:</label>
+                <select id="employee-type" name="employee-type" required>
+                    <option value="" disabled selected>Select Employee Type</option>
+                    <option value="worker">Worker</option>
+                    <option value="cleaner">Cleaner</option>
+                    <option value="admin">Admin</option>
+                    <option value="security">Security</option>
+                    <option value="technician">Technician</option>
+                    <option value="manager">Manager</option>
+                </select>
+                <br>
+                <button type="submit">Add Employee</button>
+            </form>
+        </div>
+        
+        <!-- Product -->
+        <div class="add-product" id="add-product">
+            <h2>Add Product</h2>
+            <form id="add-product-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                <br>
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" name="product-price" required>
+                <br>
+                <label for="product-quantity">Quantity:</label>
+                <input type="number" id="product-quantity" name="product-quantity" required>
+                <br>
+                <label for="product-image">Product Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                <br>
+                <button type="submit" onclick="redirectToLogin()">Add Product</button>
+            </form>
+        </div>
+        
+        <!-- Products List Section -->
+        <div class="products-list hidden" id="products-list">
+            <h2>Products List</h2>
+            <ul id="products-ul">
+                <li class="product-item">
+                    <img src="Images/P!.jpg" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 1</h3>
+                        <p>Price: 25.00</p>
+                        <p>Quantity: 100</p>
+                        <button class="view-details" onclick="redirectToLogin()">View Details</button>
+                    </div>
+                </li>
+                <li class="product-item">
+                    <img src="Images/P2.jfif" alt="Product 2" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 2</h3>
+                        <p>Price: 15.00</p>
+                        <p>Quantity: 200</p>
+                        <button class="view-details" onclick="redirectToLogin()">View Details</button>
+                    </div>
+                </li>
+                <li class="product-item">
+                    <img src="Images/P3.jfif" alt="Product 3" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 3</h3>
+                        <p>Price: 34.75</p>
+                        <p>Quantity: 50</p>
+                        <button class="view-details" onclick="redirectToLogin()">View Details</button>
+                    </div>
+                </li>
+                <li class="product-item">
+                    <img src="Images/P4.png" alt="Product 4" class="product-image">
+                    <div class="product-info">
+                        <h3>Product Name 4</h3>
+                        <p>Price: 22.90</p>
+                        <p>Quantity: 75</p>
+                        <button class="view-details" onclick="redirectToLogin()">View Details</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Supplier section -->
+        <div class="add-supplier" id="add-supplier-section">
+            <h2>Add Supplier</h2>
+            <form id="add-supplier-form">
+                <label for="supplier-name">Supplier Name:</label>
+                <input type="text" id="supplier-name" name="supplier-name" required>
+                <br>
+                <label for="company-details">Company Details:</label>
+                <textarea id="company-details" name="company-details" rows="3" required></textarea>
+                <br>
+                <label for="supplier-id">Supplier ID:</label>
+                <input type="text" id="supplier-id" name="supplier-id" required>
+                <br>
+                <button type="submit" onclick="redirectToLogin()">Add Supplier</button>
+            </form>
+        </div>        
+
+        <!-- Customer and Supplier Tables -->
+        <h2>Customer and Supplier Overview</h2>
+        <div class="tables" id="Customer">
+            <div class="table">
+                <h3>Top Customers</h3>
+                <table>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Spending</th>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/likhon.jpg" alt="Customer 1" class="profile-img"></td>
+                        <td>Abid Hasan Likhon</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/alam.jpg" alt="Customer 2" class="profile-img"></td>
+                        <td>Shah Alam</td>
+                        <td>3200</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/marfi.jpg" alt="Customer 3" class="profile-img"></td>
+                        <td>Marfi Hasan Raihan</td>
+                        <td>2400</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/sadid.jpg" alt="Customer 3" class="profile-img"></td>
+                        <td>Sadid Ahmed Turjo</td>
+                        <td>4400</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/bishwajit.jpg" alt="Customer 3" class="profile-img"></td>
+                        <td>Bishwajit BKC</td>
+                        <td>2000</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table">
+                <h3>Suppliers</h3>
+                <table>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Supply ID</th>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/ACI.jpg" alt="Supplier 1" class="profile-img"></td>
+                        <td>ACI Limited</td>
+                        <td>A2BD11</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/BC.png" alt="Supplier 2" class="profile-img"></td>
+                        <td>Bashundhara Group</td>
+                        <td>A2BD31</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Images/FP.png" alt="Supplier 3" class="profile-img"></td>
+                        <td>Foodpanda</td>
+                        <td>A2BD44</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="Images/footer.png" alt="Footer Logo" class="footer-logo">
+            <p>Follow Us</p>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/shafikhanzz72"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/_.shafiiii._/"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/shafi72"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://github.com/nazibur74"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToLogin() {
+            window.location.href = "login.html";
+        }
+        </script>
+
+</body>
+</html>
