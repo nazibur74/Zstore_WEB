@@ -12,19 +12,19 @@
                     <h2>Zstore</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" placeholder=" " required>
+                        <input type="email" id="email" placeholder=" " required>
                         <label>Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" placeholder=" " required>
+                        <input type="password" id="password" placeholder=" " required>
                         <label>Password</label>
                     </div>
                     
                     <div class="forget">
                         <label><input type="checkbox">Remember Me <a href="#">Forget Password</a></label>
                     </div>
-                    <button type="button" id="login-btn" onclick="redirectToDashboard()">Log in</button>
+                    <button type="button" id="login-btn" onclick="validateLogin()">Log in</button>
                     <div class="register">
                         <p>Don't have an account? <a href="register.html">Register</a></p>
                     </div>
@@ -35,10 +35,6 @@
     
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-        function redirectToDashboard() {
-            window.location.href = "index.html";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

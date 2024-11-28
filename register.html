@@ -5,44 +5,44 @@
   <title>Zstore - Register</title>
 </head>
 <body class="register-page">
-    <section1>
+    <section>
         <div class="form-box">
             <div class="form-value">
                 <form id="registerForm">
                     <h2>Register</h2>
-                    <!-- Name Input -->
+                    <!-- Full Name Input -->
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" placeholder=" " required>
+                        <input type="text" id="fullName" placeholder=" " required>
                         <label>Full Name</label>
                     </div>
                     <!-- Email Input -->
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" placeholder=" " required>
+                        <input type="email" id="email" placeholder=" " required>
                         <label>Email</label>
                     </div>
                     <!-- Password Input -->
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" placeholder=" " required>
+                        <input type="password" id="password" placeholder=" " required>
                         <label>Password</label>
                     </div>
                     <!-- Confirm Password Input -->
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" placeholder=" " required>
+                        <input type="password" id="confirmPassword" placeholder=" " required>
                         <label>Confirm Password</label>
                     </div>
                     <!-- Terms and Conditions -->
                     <div class="forget">
                         <label>
-                            <input type="checkbox" required>
+                            <input type="checkbox" id="termsCheckbox" required>
                             I agree to the <a href="#">Terms & Conditions</a>
                         </label>
                     </div>
                     <!-- Register Button -->
-                    <button type="button" id="login-btn" onclick="redirectToDashboard()">Register</button>
+                    <button type="button" id="login-btn" onclick="validateRegister()">Register</button>
                     <!-- Redirect to Login -->
                     <div class="register">
                         <p>Already have an account? <a href="login.html">Log in</a></p>
@@ -50,14 +50,10 @@
                 </form>
             </div>
         </div>
-    </section1>
+    </section>
     
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-        function redirectToDashboard() {
-            window.location.href = "index.html";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

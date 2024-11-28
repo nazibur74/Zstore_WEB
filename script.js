@@ -160,6 +160,70 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(productsListSection);
 });
 
-function redirectToLogin() {
-    window.location.href = "login.html";
+function validateLogin() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (email === '' || password === '') {
+        alert('Both email and password fields are required.');
+        return;
+    }
+
+    // Optional: Add additional email or password validation here.
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    redirectToDashboard();
 }
+
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailPattern.test(email);
+}
+
+function redirectToDashboard() {
+    window.location.href = "index.html";
+}
+
+function validateRegister() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const confirmPassword = document.getElementById('confirmPassword').value.trim();
+    const termsCheckbox = document.getElementById('termsCheckbox').checked;
+
+    if (!fullName || !email || !password || !confirmPassword) {
+        alert('All fields are required.');
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+    }
+
+    if (!termsCheckbox) {
+        alert('You must agree to the Terms & Conditions.');
+        return;
+    }
+
+    alert('Registration successful!');
+    redirectToDashboard();
+}
+
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailPattern.test(email);
+}
+
+function redirectToDashboard() {
+    window.location.href = "index.html";
+}
+
