@@ -21,7 +21,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #b4182d !important;
+    background-color: #fff !important;
     color: #fff;
     position: fixed;
     top: 0;
@@ -45,13 +45,13 @@ body {
     font-size: 1.5em;
     background: none;
     border: none;
-    color: #fff;
+    color: #b4182d;
     cursor: pointer;
 }
 
 .refresh-btn {
     font-size: 2em;
-    color: #fff;
+    color: #b4182d;
     background: none;
     border: none;
     cursor: pointer;
@@ -62,17 +62,19 @@ body {
     width: auto;
     height: 30px;
     padding: 0 20px;
-    background-color: white;
+    background-color: #b4182d;
+    border: #b4182d;
     border-radius: 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #b4182d;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .add-btn:hover {
     background-color: #F6F7C4;
+    color: #b4182d;
     transform: scale(1.05);
 }
 
@@ -122,9 +124,7 @@ body {
     margin-top: 55px;
     width: 250px;
     height: 100%;
-    background-color: #b4182d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
+    background-color: #fff;
     position:fixed;
     top: 0;
     left: 0;
@@ -144,7 +144,7 @@ body {
 }
 
 .sidebar ul li a {
-    color: white;
+    color: #b4182d;
     text-decoration: none;
     display: block;
 }
