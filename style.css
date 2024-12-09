@@ -413,11 +413,11 @@ canvas {
 }
 
 .footer p {
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 .footer-logo {
-    margin-bottom: 10px;
+    margin-bottom: auto;
 }
 
 .footer-link {
@@ -428,6 +428,7 @@ canvas {
 .footer-link:hover {
     color: #b4182d;
 }
+
 /*login section*/
 section {
     margin-top: 50px;
