@@ -1,10 +1,12 @@
 # Technical Documentation for ZStore (An Inventory Management System)
+
 <br>
 Author : Nazibur Rahman
 <br>
 Daffodil International University
 <br>
 <br>
+
 ## 1. Project Overview
 The ZStore, an Inventory Management System, is a web-based application designed to streamline inventory management processes for businesses. The system provides functionalities for managing products, suppliers, customers, and employee roles while offering a user-friendly and visually appealing dashboard. It is built with HTML, CSS, and JavaScript for the frontend.
 
