@@ -69,11 +69,11 @@ The project aims to:
 ## 8. Folder Structure
 ```
 Zstore
-├── index.html       # Main HTML file
+├── index.html      # Main HTML file
 ├── login.html
 ├── register.html
-├── style.css  # Stylesheets
-├── script.js  # JavaScript functionalities
+├── style.css       # Stylesheets
+├── script.js       # JavaScript functionalities
 ├── images/         # Image assets
 
 ```
