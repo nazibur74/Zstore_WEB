@@ -1,4 +1,4 @@
-# Technical Documentation for ZStore (An Inventory Management System)
+# Technical Documentation for Zstore (An Inventory Management System)
 
 <br>
 Author : Nazibur Rahman
@@ -8,7 +8,7 @@ Daffodil International University
 <br>
 
 ## 1. Project Overview
-The ZStore, an Inventory Management System, is a web-based application designed to streamline inventory management processes for businesses. The system provides functionalities for managing products, suppliers, customers, and employee roles while offering a user-friendly and visually appealing dashboard. It is built with HTML, CSS, and JavaScript for the frontend.
+The Zstore, an Inventory Management System, is a web-based application designed to streamline inventory management processes for businesses. The system provides functionalities for managing products, suppliers, customers, and employee roles while offering a user-friendly and visually appealing dashboard. It is built with HTML, CSS, and JavaScript for the frontend.
 
 ## 2. Project Scope
 The project aims to:
@@ -37,7 +37,7 @@ The project aims to:
 
 ## 5. Functional Overview
 ### 5.1 User Authentication:
-- **Login System**: Administrator login restricted to specific credentials (username: "shafi", password: "1234").
+- **Login System**: Administrator login restricted to specific credentials (username: "nazibur", password: "1234").
 - **Registration Page**: Allows user registration with database storage.
 
 ### 5.2 Product Management:
@@ -99,5 +99,5 @@ Zstore
 - **Mobile Application**: Develop an Android and iOS app for the system.
 
 ## 11. Conclusion
-The ZStore Inventory Management System is a robust and efficient solution for modern businesses, combining intuitive design with powerful features. It ensures seamless operations and scalability for future enhancements. For now, there’s only the frontend part and the backend structure will come soon, along with the database addition. Click [here](https://github.com/nazibur74/Zstore_WEB) to see the frontend with responsive functionalities.
+The Zstore Inventory Management System is a robust and efficient solution for modern businesses, combining intuitive design with powerful features. It ensures seamless operations and scalability for future enhancements. For now, there’s only the frontend part and the backend structure will come soon, along with the database addition. Click [here](https://github.com/nazibur74/Zstore_WEB) to see the frontend with responsive functionalities.
 
