@@ -72,11 +72,10 @@ Zstore
 ├── index.html       # Main HTML file
 ├── login.html
 ├── register.html
-├── css/            # Stylesheets
-│   └── style.css
-├── js/             # JavaScript functionalities
-│   └── script.js
+├── style.css  # Stylesheets
+├── script.js  # JavaScript functionalities
 ├── images/         # Image assets
+
 ```
 
 ## 9. Testing
