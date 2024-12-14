@@ -98,5 +98,5 @@ Zstore
 - **Mobile Application**: Develop an Android and iOS app for the system.
 
 ## 11. Conclusion
-The Zstore Inventory Management System is a robust and efficient solution for modern businesses, combining intuitive design with powerful features. It ensures seamless operations and scalability for future enhancements. For now, there’s only the frontend part and the backend structure will come soon, along with the database addition. Click [here](https://nazibur74.github.io/Zstore_WEB/) to see the frontend with responsive functionalities.
+The Zstore Inventory Management System is a robust and efficient solution for modern businesses, combining intuitive design with powerful features. It ensures seamless operations and scalability for future enhancements. For now, there’s only the frontend part and the backend structure will come soon, along with the database addition. [Click here](https://nazibur74.github.io/Zstore_WEB/) to see the frontend with responsive functionalities.
 
